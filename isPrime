@@ -1,0 +1,32 @@
+/*Two forms that take either a number or array of numbers and returns true for primes. If you use the array prototype it will return a 
+new array with only the prime numbers*/
+
+Array.prototype.isPrime = function(num) {
+var primeStor = [];
+  
+  if(num){
+    if((num === 2 || num === 3 || num === 5)) {
+        return true;
+      } else if(num % 2 !== 0 && num % 3 !== 0 && num !== 1) {
+        return true;
+      } else {
+        return false;
+      }
+  } else {
+    this.forEach(function(x){   
+       if((x === 2 || x === 3 || x === 5)) {
+        primeStor.push(x);
+      } else if(x % 2 !== 0 && x % 3 !== 0 && x !== 1) {
+        primeStor.push(x);
+      }
+    });  
+  }
+  return primeStor;
+};
+
+[].isPrime(5);    //Use this if you want to check a single num
+
+var numbers = [1,2,3,4,5];
+
+numbers.isPrime();   //Use this if you want to check an array of numbers
+
