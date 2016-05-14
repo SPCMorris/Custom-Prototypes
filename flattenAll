@@ -1,4 +1,4 @@
-//Flattens an multi-dimensional arrays
+//Flattens multi-dimensional arrays
 
 Array.prototype.flattenAll = function() {
 var storage = [], arr = this;
