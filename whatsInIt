@@ -1,0 +1,22 @@
+//Logs the length, key/value or items of array or objects
+
+Object.prototype.whatsInIt = function() {
+var count = 0, propNames = "", values = "";
+  
+  if(Array.isArray(this)) {
+    for(var j = 0; j < this.length; j++) {
+      count++;
+      values+= this[j] + ", ";
+    }
+    console.log("The array contains " + count + " item(s) and they are " + values + "in order of position");
+  } else if(typeof this === 'object') {
+    for(var i in this) {
+      count++;
+      propNames+= i + ", ";
+      values+= this[i] + ", ";
+    }
+    console.log("The obj has " + count + " properties and they are " + propNames + "and have the values " + values + "respectively");
+    }
+};
+
+//One issue I am having is if I use it on an Object and not ant an array it will log the entire prototype too...Not sure why. Suggestions?
